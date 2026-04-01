@@ -77,18 +77,12 @@
  background: var(--accent); border-radius: 50%;
  animation: pulse 2s infinite;
  }
- @keyframes pulse {
- 0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
- }
+ @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
- h1 {
- font-size: 1.5rem; font-weight: 600; line-height: 1.3;
- color: var(--text); margin-bottom: 0.5rem;
- }
+ h1 { font-size: 1.5rem; font-weight: 600; line-height: 1.3; margin-bottom: 0.5rem; }
  .desc {
  font-size: 0.85rem; color: var(--muted); line-height: 1.6;
- margin-bottom: 2rem;
- padding-bottom: 1.5rem;
+ margin-bottom: 2rem; padding-bottom: 1.5rem;
  border-bottom: 1px solid var(--border);
  }
 
@@ -108,8 +102,7 @@
  border: 1px solid var(--border);
  border-radius: 10px; padding: 0.75rem 2.75rem 0.75rem 1rem;
  transition: border-color 0.2s, box-shadow 0.2s;
- outline: none;
- -webkit-appearance: none;
+ outline: none; -webkit-appearance: none;
  }
  input:focus {
  border-color: var(--border-focus);
@@ -126,64 +119,47 @@
  }
  .toggle-vis:hover { color: var(--text); }
 
- .hint {
- font-size: 0.75rem; color: var(--muted); margin-top: 5px;
- display: flex; align-items: flex-start; gap: 5px;
- }
+ .hint { font-size: 0.75rem; color: var(--muted); margin-top: 5px; display: flex; align-items: flex-start; gap: 5px; }
  .hint.warn { color: var(--warning); }
  .hint svg { flex-shrink: 0; margin-top: 1px; }
 
  .btn {
  width: 100%; margin-top: 1.75rem;
- background: var(--accent);
- color: #fff; font-family: 'Be Vietnam Pro', sans-serif;
+ background: var(--accent); color: #fff;
+ font-family: 'Be Vietnam Pro', sans-serif;
  font-size: 0.95rem; font-weight: 600;
  border: none; border-radius: 10px;
- padding: 0.9rem 1.5rem;
- cursor: pointer; transition: all 0.2s;
+ padding: 0.9rem 1.5rem; cursor: pointer;
+ transition: all 0.2s;
  display: flex; align-items: center; justify-content: center; gap: 8px;
- letter-spacing: 0.01em;
  }
  .btn:hover:not(:disabled) {
- background: #6ab2ff;
- transform: translateY(-1px);
+ background: #6ab2ff; transform: translateY(-1px);
  box-shadow: 0 8px 24px rgba(74,158,255,0.3);
  }
  .btn:active:not(:disabled) { transform: translateY(0); }
  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
  .spinner {
- width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3);
- border-top-color: #fff; border-radius: 50%;
- animation: spin 0.6s linear infinite; display: none;
+ width: 16px; height: 16px;
+ border: 2px solid rgba(255,255,255,0.3); border-top-color: #fff;
+ border-radius: 50%; animation: spin 0.6s linear infinite; display: none;
  }
  @keyframes spin { to { transform: rotate(360deg); } }
 
  .alert {
  display: none; border-radius: 10px; padding: 1rem 1.25rem;
- font-size: 0.85rem; margin-top: 1rem;
- border: 1px solid transparent;
- line-height: 1.5;
+ font-size: 0.85rem; margin-top: 1rem; border: 1px solid transparent; line-height: 1.5;
  }
- .alert.success {
- background: var(--success-bg);
- border-color: rgba(52,211,153,0.25);
- color: var(--success);
- }
- .alert.error-box {
- background: var(--error-bg);
- border-color: rgba(248,113,113,0.25);
- color: var(--error);
- }
+ .alert.success { background: var(--success-bg); border-color: rgba(52,211,153,0.25); color: var(--success); }
+ .alert.error-box { background: var(--error-bg); border-color: rgba(248,113,113,0.25); color: var(--error); }
 
  .security-note {
- margin-top: 1.5rem;
- padding-top: 1.25rem;
- border-top: 1px solid var(--border);
+ margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border);
  display: flex; align-items: flex-start; gap: 8px;
  font-size: 0.75rem; color: var(--muted); line-height: 1.5;
  }
- .security-note svg { flex-shrink: 0; margin-top: 1px; color: var(--muted); }
+ .security-note svg { flex-shrink: 0; margin-top: 1px; }
 </style>
 </head>
 <body>
@@ -199,8 +175,8 @@
  <label>User Token <span class="required">*</span></label>
  <div class="input-wrap">
  <input type="password" id="user_token" placeholder="EAAxxxxxxxxxx..." autocomplete="off" />
- <button class="toggle-vis" type="button" onclick="toggleVis('user_token', this)" title="Hiện/ẩn">
- <svg id="eye-user_token" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+ <button class="toggle-vis" type="button" onclick="toggleVis('user_token', this)">
+ <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
  </button>
  </div>
  <p class="hint warn">
@@ -220,8 +196,8 @@
  <label>App Secret</label>
  <div class="input-wrap">
  <input type="password" id="app_secret" placeholder="abc123def456..." autocomplete="off" />
- <button class="toggle-vis" type="button" onclick="toggleVis('app_secret', this)" title="Hiện/ẩn">
- <svg id="eye-app_secret" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+ <button class="toggle-vis" type="button" onclick="toggleVis('app_secret', this)">
+ <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
  </button>
  </div>
  </div>
@@ -241,28 +217,22 @@
 </div>
 
 <script>
- // ⚙️ CẤU HÌNH — thay bằng URL Lambda của bạn sau khi deploy
- const LAMBDA_URL = 'https://pvk27nhhbdpivxa77ckdbq2ofu0vkodi.lambda-url.us-east-1.on.aws/';
+ const N8N_URL = 'https://fb.alphagym.site/webhook/get-page-token';
 
  function toggleVis(id, btn) {
  const input = document.getElementById(id);
- const eye = document.getElementById('eye-' + id);
  const isPass = input.type === 'password';
  input.type = isPass ? 'text' : 'password';
- eye.innerHTML = isPass
- ? '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/>'
- : '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+ btn.innerHTML = isPass
+ ? '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>'
+ : '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
  }
 
  function setLoading(on) {
- const btn = document.getElementById('submitBtn');
- const spinner = document.getElementById('spinner');
- const icon = document.getElementById('btnIcon');
- const text = document.getElementById('btnText');
- btn.disabled = on;
- spinner.style.display = on ? 'block' : 'none';
- icon.style.display = on ? 'none' : 'block';
- text.textContent = on ? 'Đang xử lý...' : 'Lấy Token';
+ document.getElementById('submitBtn').disabled = on;
+ document.getElementById('spinner').style.display = on ? 'block' : 'none';
+ document.getElementById('btnIcon').style.display = on ? 'none' : 'block';
+ document.getElementById('btnText').textContent = on ? 'Đang xử lý...' : 'Lấy Token';
  }
 
  function showAlert(type, message) {
@@ -279,9 +249,9 @@
  const app_secret = document.getElementById('app_secret').value.trim();
 
  document.getElementById('alertBox').style.display = 'none';
- ['user_token','app_id','app_secret'].forEach(id => {
- document.getElementById(id).classList.remove('error-field');
- });
+ ['user_token','app_id','app_secret'].forEach(id =>
+ document.getElementById(id).classList.remove('error-field')
+ );
 
  if (!user_token) {
  document.getElementById('user_token').classList.add('error-field');
@@ -291,29 +261,27 @@
 
  setLoading(true);
  try {
- const res = await fetch(LAMBDA_URL, {
+ const res = await fetch(N8N_URL, {
  method: 'POST',
  headers: { 'Content-Type': 'application/json' },
  body: JSON.stringify({ user_token, app_id, app_secret })
  });
- const data = await res.json();
- if (res.ok && data.success) {
+
+ if (res.ok) {
  showAlert('success', '✓ Gửi thành công! Workflow đang xử lý. Kiểm tra kết quả trong Google Sheet của bạn.');
  document.getElementById('user_token').value = '';
  document.getElementById('app_id').value = '';
  document.getElementById('app_secret').value = '';
  } else {
- showAlert('error', data.message || 'Có lỗi xảy ra. Vui lòng thử lại.');
+ showAlert('error', `Lỗi từ server: ${res.status}. Kiểm tra lại workflow n8n.`);
  }
  } catch (err) {
- showAlert('error', 'Không thể kết nối. Kiểm tra lại đường truyền mạng.');
+ showAlert('error', 'Không thể kết nối tới server. Kiểm tra n8n đang chạy và CORS đã được bật.');
  }
  setLoading(false);
  }
 
- document.addEventListener('keydown', e => {
- if (e.key === 'Enter') submitForm();
- });
+ document.addEventListener('keydown', e => { if (e.key === 'Enter') submitForm(); });
 </script>
 </body>
 </html>
